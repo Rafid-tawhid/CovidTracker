@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F0F0"
+    tools:context=".MainActivity">
+
+   <androidx.cardview.widget.CardView
+       android:layout_width="match_parent"
+       android:layout_height="180dp"
+       app:cardCornerRadius="6dp"
+       android:id="@+id/cd1"
+       android:layout_marginBottom="1dp"
+       android:layout_margin="12dp">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:weightSum="2">
+           <org.eazegraph.lib.charts.PieChart
+               xmlns:app="http://schemas.android.com/apk/res-auto"
+               android:id="@+id/piechart"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:padding="8dp"
+               android:layout_weight="1"
+              />
+
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_height="match_parent"
+               android:layout_marginLeft="20dp"
+               android:orientation="vertical"
+               android:gravity="center_vertical"
+               
+               android:layout_weight="1">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_margin="3dp"
+                   android:layout_height="15dp">
+                   <View
+                       android:layout_width="15dp"
+                       android:layout_height="15dp"
+                       android:background="#FFC107">
+
+                   </View>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:text="Total Cases"
+                       android:paddingLeft="15dp"
+
+                       android:layout_gravity="center_vertical">
+
+                   </TextView>
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_margin="3dp"
+                   android:layout_height="15dp">
+                   <View
+                       android:layout_width="15dp"
+                       android:layout_height="15dp"
+                       android:background="#8BC34A">
+
+                   </View>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:text="Recovered"
+                       android:paddingLeft="15dp"
+
+                       android:layout_gravity="center_vertical">
+
+                   </TextView>
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_margin="3dp"
+                   android:layout_height="15dp">
+                   <View
+                       android:layout_width="15dp"
+                       android:layout_height="15dp"
+                       android:background="#FF0707">
+
+                   </View>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:text="Death"
+                       android:paddingLeft="15dp"
+
+                       android:layout_gravity="center_vertical">
+
+                   </TextView>
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_margin="3dp"
+                   android:layout_height="15dp">
+
+                   <View
+                       android:layout_width="14dp"
+                       android:layout_height="match_parent"
+                       android:background="#2196F3">
+
+                   </View>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:text="Active"
+                       android:paddingLeft="15dp"
+
+                       android:layout_gravity="center_vertical">
+
+                   </TextView>
+               </LinearLayout>
+
+           </LinearLayout>
+       </LinearLayout>
+   </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cd2"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/btn"
+        android:layout_below="@+id/cd1"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="6dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.leo.simplearcloader.SimpleArcLoader
+                android:id="@+id/loader"
+
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:visibility="visible"
+
+                app:arc_style="simple_arc"></com.leo.simplearcloader.SimpleArcLoader>
+
+            <ScrollView
+                android:id="@+id/scrollSts"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Global Stats"
+                        android:textSize="26sp">
+
+                    </TextView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#B6B6B6">
+
+                    </View>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:text="Cases"
+                            android:textSize="18dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tvCases"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="20dp"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#FD0000"
+                            android:textSize="18dp">
+
+                        </TextView>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#B6B6B6">
+
+                    </View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:text="Recovered"
+                            android:textSize="18dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tvRecovered"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="20dp"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#FD0000"
+                            android:textSize="18dp">
+
+                        </TextView>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#B6B6B6">
+
+                    </View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:text="Total Death"
+                            android:textSize="18dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tvDeath"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="20dp"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#FD0000"
+                            android:textSize="18dp">
+
+                        </TextView>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#B6B6B6">
+
+                    </View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:text="Active"
+                            android:textSize="18dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tvActive"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="20dp"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#FD0000"
+                            android:textSize="18dp">
+
+                        </TextView>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#B6B6B6">
+
+                    </View>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:text="Critical"
+                            android:textSize="18dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tvCritical"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="20dp"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#FD0000"
+                            android:textSize="18dp">
+
+                        </TextView>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#B6B6B6">
+
+                    </View>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:text="Effected Contries"
+                            android:textSize="18dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tvTotalContrys"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="20dp"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#FD0000"
+                            android:textSize="18dp">
+
+                        </TextView>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#B6B6B6">
+
+                    </View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:text="Today Cases"
+                            android:textSize="18dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/todayCases"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="20dp"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#FD0000"
+                            android:textSize="18dp">
+
+                        </TextView>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#B6B6B6">
+
+                    </View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:text="To Day Recovered"
+                            android:textSize="18dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/todayrecovered"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="20dp"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#FD0000"
+                            android:textSize="18dp">
+
+                        </TextView>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#B6B6B6">
+
+                    </View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:text="Today's Deaths"
+                            android:textSize="18dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tvTodaysDeath"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="20dp"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#FD0000"
+                            android:textSize="18dp">
+
+                        </TextView>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#B6B6B6">
+
+                    </View>
+
+
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="#FF5722"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Track Country"
+        android:onClick="goTrackCountries"
+        android:textColor="@color/white"
+        >
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+</RelativeLayout>
