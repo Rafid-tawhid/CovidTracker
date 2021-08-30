@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/pendrive/Android projects/CovidTracker/app/src/main/res/drawable/search_bg.xml" value="0.2046875" />
+        <entry key="..\:/pendrive/Android projects/CovidTracker/app/src/main/res/drawable/serch.xml" value="0.2046875" />
+        <entry key="..\:/pendrive/Android projects/CovidTracker/app/src/main/res/layout/activity_affected_countries.xml" value="0.25" />
         <entry key="..\:/pendrive/Android projects/CovidTracker/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/pendrive/Android projects/CovidTracker/app/src/main/res/layout/list_custom_item.xml" value="0.18854166666666666" />
       </map>
     </option>
   </component>
